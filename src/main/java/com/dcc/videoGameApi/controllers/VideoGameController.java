@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,6 +34,12 @@ public class VideoGameController {
     public Optional<VideoGame> getById(@PathVariable Integer id){
         return service.getByVGId(id);
     }
+
+    @GetMapping("/platformsales")
+    public HashMap<String, Double> getPlatforms(){
+        return service.GetAllPlatformSales();
+    }
+
 }
 
 
