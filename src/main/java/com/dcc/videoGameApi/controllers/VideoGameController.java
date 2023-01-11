@@ -1,7 +1,6 @@
 package com.dcc.videoGameApi.controllers;
 
 import com.dcc.videoGameApi.models.VideoGame;
-import com.dcc.videoGameApi.repository.VideoGameRepository;
 import com.dcc.videoGameApi.service.VideoGameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class VideoGameController {
@@ -23,4 +24,15 @@ public class VideoGameController {
         return service.GetCountOfGames();
     }
 
+    @GetMapping("/all")
+    public List<VideoGame> getVGs(){
+        return service.GetAllVGs();
+    }
+
+    @GetMapping("getById/{id}")
+    public Optional<VideoGame> getById(@PathVariable Integer id){
+        return service.getByVGId(id);
+    }
 }
+
+
