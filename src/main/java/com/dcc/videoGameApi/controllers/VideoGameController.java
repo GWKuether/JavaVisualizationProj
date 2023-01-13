@@ -40,6 +40,9 @@ public class VideoGameController {
         return service.GetAllPlatformSales();
     }
 
+    @GetMapping("/genresales")
+    public HashMap<String,Double> getGenres() {return service.GetGenreSales();}
+
 }
 
 

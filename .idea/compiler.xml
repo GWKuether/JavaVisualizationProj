@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="videoGameApi" />
+        <module name="JavaVisualizationProj" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="JavaVisualizationProj" options="-parameters" />
       <module name="videoGameApi" options="-parameters" />
     </option>
   </component>

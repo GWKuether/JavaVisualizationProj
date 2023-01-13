@@ -35,6 +35,13 @@ public class VideoGameService {
         salesPerPlatform.put(platform, videoGameRepository.findAll().stream().filter(y ->y.getYear() >= 2013).filter(p -> p.getPlatform().equals(platform)).map(g -> g.getGlobalsales()).reduce((double)0, (e1,e2) -> e1 + e2));
         return salesPerPlatform;
     }
+    public HashMap<String,Double> GetGenreSales(){
+        List<String> allgenres = videoGameRepository.findAll().stream().filter(y -> y.getYear() >= 2003).map(g -> g.getGenre()).distinct().collect(Collectors.toList());
+        HashMap<String,Double> SalesPerGenre = new HashMap<>();
+        for (String genre : allgenres)
+            SalesPerGenre.put(genre, videoGameRepository.findAll().stream().filter(y -> y.getYear() >= 2003).filter(g -> g.getGenre().equals(genre)).map(g -> g.getGlobalsales()).reduce((double)0, (e1,e2) -> e1 + e2));
+        return SalesPerGenre;
+    }
 
 }
 
