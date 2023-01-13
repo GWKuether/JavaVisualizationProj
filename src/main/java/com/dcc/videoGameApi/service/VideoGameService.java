@@ -43,5 +43,17 @@ public class VideoGameService {
         return SalesPerGenre;
     }
 
+//    public HashMap<String,Double> GetSalesPerPlatform(){
+//        List<String> allPlatforms = videoGameRepository.findAll().stream().map(p -> p.getPlatform()).distinct().collect(Collectors.toList());
+//        List<String> allPublishers = videoGameRepository.findAll().stream().map(p -> p.getPublisher()).distinct().collect(Collectors.toList());
+//        HashMap<String,Double> SalesPerPublisher = new HashMap<>();
+//        for (String platform : allPlatforms)
+//            SalesPerPublisher.put(platform, videoGameRepository.findAll().stream().map(p -> p.getPublisher()).distinct().collect(Collectors.toList());
+//
+//
+//
+//    }
 }
 
+
+//videoGameRepository.findAll().stream().filter(p ->p.getPublisher()).map(g ->g.getGlobalsales()).reduce(double)0, (e1,e2) -> e1 + e2));
